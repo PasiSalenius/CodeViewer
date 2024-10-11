@@ -354,8 +354,6 @@ extension CodeWebView {
         webview.topAnchor.constraint(equalTo: topAnchor).isActive = true
         webview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
-        webview.scrollView.bounces = false
-        
         guard let bundlePath = Bundle.module.path(forResource: "ace", ofType: "bundle"),
             let bundle = Bundle(path: bundlePath),
             let indexPath = bundle.path(forResource: "index", ofType: "html") else {
