@@ -312,7 +312,7 @@ public class CodeWebView: CustomView {
         let script = first + content + end
         callJavascript(javascriptString: script)
         
-        callJavascript(javascriptString: "editor.setOption('wrap', true);")
+        callJavascript(javascriptString: "editor.setOption('wrap', true); editor.setOption('indentedSoftWrap', false);")
     }
     
     func setTheme(_ theme: Theme) {
@@ -353,6 +353,8 @@ extension CodeWebView {
         webview.trailingAnchor.constraint(equalTo: trailingAnchor).isActive = true
         webview.topAnchor.constraint(equalTo: topAnchor).isActive = true
         webview.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
+        
+        webview.scrollView.bounces = false
         
         guard let bundlePath = Bundle.module.path(forResource: "ace", ofType: "bundle"),
             let bundle = Bundle(path: bundlePath),
