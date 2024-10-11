@@ -312,7 +312,7 @@ public class CodeWebView: CustomView {
         let script = first + content + end
         callJavascript(javascriptString: script)
         
-        
+        callJavascript(javascriptString: "editor.setOption('wrap', true);")
     }
     
     func setTheme(_ theme: Theme) {
